@@ -4,7 +4,8 @@ import pandas as pd
 
 countcompany = pd.read_csv('..\Data\countcompany.csv')
 
-df = pd.pivot_table(countcompany, index='label', values='n', aggfunc=sum)
+df = pd.pivot_table(countcompany, index='CompanyStatusLabel',
+                    values='n', aggfunc=sum)
 print(df)
 
 data = [go.Bar(
