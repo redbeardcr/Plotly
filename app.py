@@ -2,7 +2,8 @@ import plotly.graph_objects as go
 import plotly.offline as pyo
 import pandas as pd
 
-countcompany = pd.read_csv('..\Data\countcompany.csv')
+countcompany = pd.read_csv(
+    'https://raw.githubusercontent.com/redbeardcr/Plotly/master/Data/countcompany.csv')
 
 df = pd.pivot_table(countcompany, index='CompanyStatusLabel',
                     values='n', aggfunc=sum)
