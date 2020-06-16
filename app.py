@@ -7,12 +7,14 @@ countcompany = pd.read_csv(
 
 df = pd.pivot_table(countcompany, index='CompanyStatusLabel',
                     values='n', aggfunc=sum)
+
 print(df)
 
 data = [go.Bar(
     x=df.index,
-    y=df.values,
+    y=df.values.flatten(),
 )]
+
 
 layout = go.Layout(title='Title')
 
